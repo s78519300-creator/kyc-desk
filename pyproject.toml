@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kyc-desk"
+version = "0.1.0"
+description = "An Indian KYC onboarding desk for training and testing AI agents: PAN/Aadhaar checks, sanctions and PEP screening, fraud rings, multi-day workflows and a verifier that reads the books."
+readme = "README.md"
+license = { text = "PolyForm-Noncommercial-1.0.0" }
+authors = [{ name = "Shalu Kumari" }]
+requires-python = ">=3.9"
+keywords = ["ai-agents", "reinforcement-learning", "environment", "kyc", "aml", "llm-evaluation", "mcp", "benchmark"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+kyc-desk = "kyc_desk.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
